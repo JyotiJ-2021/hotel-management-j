@@ -16,26 +16,26 @@ export default function History() {
   const [reserveList, setReserveList] = useState(JSON.parse(localStorage.getItem("reserve")) || []);
   const [edit, setEdit] = useState(false)
   const [hotelInfo, setHotelInfo] = useState()
-  const handleDelete = (value) => {
-    const result = JSON.parse(localStorage.getItem("reserve"));
-     if (
-      result !== null &&
-      result !== undefined &&
-      result !== "" &&
-      result.length > 0
-    ) {
-      result.splice(value, 1);
-      setReserveList(result)
-      JSON.parse(localStorage.setItem("reserve", JSON.stringify(result)));
+//   const handleDelete = (value) => {
+//     const result = JSON.parse(localStorage.getItem("reserve"));
+//      if (
+//       result !== null &&
+//       result !== undefined &&
+//       result !== "" &&
+//       result.length > 0
+//     ) {
+//       result.splice(value, 1);
+//       setReserveList(result)
+//       JSON.parse(localStorage.setItem("reserve", JSON.stringify(result)));
        
-    }
-    //getting undefined
-  };
+//     }
+//     //getting undefined
+//   };
 
-  const handleEdit=(data)=>{
- setEdit(true)
-setHotelInfo(data)
-  }
+//   const handleEdit=(data)=>{
+//  setEdit(true)
+// setHotelInfo(data)
+//   }
 
   return (
     <>
@@ -57,7 +57,7 @@ setHotelInfo(data)
 
                 <TableCell align="right">Total Guest</TableCell>
                 <TableCell align="right">Total Prize</TableCell>
-                <TableCell align="right">Action</TableCell>
+                {/* <TableCell align="right">Action</TableCell> */}
               </TableRow>
             </TableHead>
             <TableBody>
@@ -74,11 +74,11 @@ setHotelInfo(data)
                   <TableCell align="right">{row[0].checkOutDate}</TableCell>
                   <TableCell align="right">{row[0].guestNumber}</TableCell>
                   <TableCell align="right">{row[0].total}</TableCell>
-                  <TableCell align="right" sx={{display:"flex"}}><IconButton>
+                  {/* <TableCell align="right" sx={{display:"flex"}}><IconButton>
                  <DeleteOutlineIcon sx={{color:"red"}} onClick={()=> handleDelete(row.id)}/></IconButton>
              <IconButton> <EditIcon onClick={()=> handleEdit(row)} sx={{color:"blue"}} /></IconButton> 
                   
-                  </TableCell>
+                  </TableCell> */}
                 </TableRow>
               ))}
             </TableBody>

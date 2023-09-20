@@ -37,7 +37,7 @@ const CardModal = ({ open, handleClose, price, hotelInfo }) => {
         checkInDate: dates[0].startDate,
         checkOutDate: dates[0].endDate,
         guestNumber: guestNumber,
-        total: total ,
+        total: price * guestNumber ,
         reserveId: uuidv4(),
         name: hotelInfo.name,
         address: hotelInfo.address,
